@@ -5,27 +5,39 @@ class Enemy {
         this.h = h;
         this.w = w;
         this.color = color;
-        this.speedEnemy = 0;
+        this.speedEnemy = 1;
         this.ctx = ctx;
-
 }
 
-    moveUp() {
+    /*moveUp() {
         this.y -= 1;
-    }
+    }*/
 
+    
     drawCanvas() {
-    this.ctx.fillStyle = this.color
-    this.ctx.fillRect(this.x, this.y, this.w, this.h);
-
-    }
-    
-
-    moveDown(){
-        this.y += 1;
+        this.ctx.fillStyle = this.color
+        this.ctx.fillRect(this.x, this.y, this.w, this.h);
     }
 
+
+    moveEnemy(){
+        this.y += this.speedEnemy
+
+        if(this.y + this.w >= 500){
+            this.speedEnemy = -1;
+        } if (this.y <= 0) {
+            this.speedEnemy = 1;
+        }
+    }
+
+
+    top() {
+        return this.y;
+      }
     
+      bottom() {
+        return this.y + this.h;
+      }
 
   }
 

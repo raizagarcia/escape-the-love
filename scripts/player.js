@@ -4,16 +4,17 @@ class Player {
         this.x = x;
         this.h = h;
         this.w = w;
-        this.color = color;
+        //this.color = color;
         this.speedY = 0;
         this.ctx = ctx;
-
+        this.img = new Image();
 }
 
-drawCanvas() {
-    this.ctx.fillStyle = 'black';
-    this.ctx.fillRect(this.x, this.y, this.w, this.h);
-}
+    drawCanvas() {
+        this.img.src = 'docs/assets/images/shockedcat.png'
+        this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h)
+    }
+    
     newPos() {
         this.y += this.speedY;
     }
@@ -25,19 +26,25 @@ drawCanvas() {
       bottom() {
         return this.y + this.h;
       }
+      
+      right(){
+        return this.x + this.w;
+      }
+      
+      left() {
+        return this.x
+      }
 
-    /* draw() {
-        ctx.fillStyle = this.color;
-        ctx.fillRect(this.x, this.y, this.w, this.h); */
-        /* ctx.drawImage(25, 100, 50, 50, 'green') */
-    
+      crashWith(obstacle) {
+        return !(
+        this.bottom() < obstacle.top() ||
+        this.top() > obstacle.bottom() ||
+        this.right() < obstacle.left() ||
+        this.left() > obstacle.right()
+        );
+      }
 
-    /* moveUp() {
-        this.y -= 1;
-    }
 
-    moveDown(){
-        this.y += 1;
-    } */
 
   }
+ 

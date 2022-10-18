@@ -1,10 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
+
+* {
+	font-family: 'Paytone One', sans-serif;;
+	margin: 0 auto;
+	text-align: center;
+  }
+
+
 .rectangle {
     display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: center;
 	align-items: center;
-	align-content: stretch;
-    margin-top: 30px;
+	margin-top: 30px;
+	border-radius: 10px;
+	}
+
+#startButton {
+	width: 9vw;
+	height: 5vw;
+	text-decoration: none;
+	background-image: url(/docs/assets/images/shockedcat.png);
+	background-position: center;
+	background-size: 110px;
+	border: 2px solid green;
+  	border-radius: 5px;
+	font-size: 25px;
+	font-weight: bolder;
+	letter-spacing: 6px;
+	text-shadow: 2px 2px white;
 }
 
