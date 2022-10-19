@@ -4,14 +4,13 @@ class Player {
         this.x = x;
         this.h = h;
         this.w = w;
-        //this.color = color;
         this.speedY = 0;
         this.ctx = ctx;
         this.img = new Image();
 }
 
     drawCanvas() {
-        this.img.src = 'docs/assets/images/shockedcat.png'
+        this.img.src = 'docs/assets/images/background.png'
         this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h)
     }
     
@@ -20,7 +19,7 @@ class Player {
     }
 
     top() {
-        return this.y;
+        return (this.y + 10);
       }
     
       bottom() {

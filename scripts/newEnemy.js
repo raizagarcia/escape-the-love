@@ -1,11 +1,11 @@
-class Enemy {
+class NewEnemy {
     constructor(x, y, h, w, color, ctx) {
         this.y = y;
         this.x = x;
         this.h = h;
         this.w = w;
         this.color = color;
-        this.speedEnemy = 3;
+        this.speedNewEnemy = 4;
         this.ctx = ctx;
 }
 
@@ -20,13 +20,13 @@ class Enemy {
     }
 
 
-    moveEnemy(){
-        this.y += this.speedEnemy
+    move(){
+        this.y += this.speedNewEnemy
 
         if(this.y + this.w >= 500){
-            this.speedEnemy = -3;
+            this.speedNewEnemy = -4;
         } if (this.y <= 0) {
-            this.speedEnemy = 3;
+            this.speedNewEnemy = 4;
         }
     }
 
@@ -40,4 +40,3 @@ class Enemy {
       }
 
   }
-
