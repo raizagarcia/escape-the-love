@@ -11,9 +11,9 @@ window.onload = () => {
 
 
 function startGame() {
-const player = new Player(30, 100, 60, 60, 'green', ctx)
-const enemy = new Enemy(750, 590, 50, 50, 'blue', ctx);
-const newEnemy = new NewEnemy(810, 590, 60, 60, 'green', ctx)
+const player = new Player(30, 100, 50, 50, 'green', ctx)
+const enemy = new Enemy(740, 590, 70, 70, 'blue', ctx);
+const newEnemy = new NewEnemy(810, 590, 70, 70, 'green', ctx)
 
 let game = new Game(ctx, 900, 590, player, enemy, newEnemy);
 

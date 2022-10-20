@@ -4,19 +4,17 @@ class NewEnemy {
         this.x = x;
         this.h = h;
         this.w = w;
-        this.color = color;
+        //this.color = color;
+        this.img = new Image();
         this.speedNewEnemy = 4;
         this.ctx = ctx;
 }
 
-    /*moveUp() {
-        this.y -= 1;
-    }*/
 
     
     drawCanvas() {
-        this.ctx.fillStyle = this.color
-        this.ctx.fillRect(this.x, this.y, this.w, this.h);
+        this.img.src = 'docs/assets/images/enemytwoleft.png'
+        this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
     }
 
 

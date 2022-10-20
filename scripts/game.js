@@ -17,6 +17,13 @@ class Game {
         this.win.src = 'docs/assets/images/yeswin.png';
         this.song = new Audio('docs/assets/sounds/backgroundmusic.wav')
         this.song.loop = false;
+        this.img = new Image();
+        this.catchStar = new Audio('docs/assets/sounds/catchstar.mp3')
+        this.song.loop = false;
+        this.winSong = new Audio('docs/assets/sounds/youwon.wav')
+        this.winSong.loop = false;
+        this.lostSong = new Audio('docs/assets/sounds/youlost.mp3')
+        this.lostSong.loop = false;
        
     }
     
@@ -53,7 +60,7 @@ class Game {
       if(this.score >= 7){
         this.ctx.drawImage(this.win, 0, 0, this.width, this.height)
         this.stop()
-       
+       this.winSong.play();
       }
     }
 
@@ -91,7 +98,7 @@ class Game {
             this.ctx.drawImage(this.gameOver, 0, 0, this.width, this.height)
             document.getElementById("restart").style.display = "block";
             this.stop();
-          
+            this.lostSong.play();
           }
     }
   
@@ -104,6 +111,7 @@ class Game {
       });
       if (crash) {
             this.score++;
+          this.catchStar.play();
           }
     }
 
@@ -117,9 +125,12 @@ class Game {
   
 
     drawScore(){
-     this.ctx.font = '';
+     this.ctx.font = '25px monospace';
      this.ctx.fillStyle = 'black';
      this.ctx.fillText('✨'.repeat(this.score), 350, 50)
+
+  /*    this.img.src = 'docs/assets/images/life.png'
+     this.ctx.drawImage(this.img,350, 50, 50, 50) */
      
     }
 
