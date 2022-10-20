@@ -14,7 +14,10 @@ class Game {
         this.gameOver = new Image();
         this.gameOver.src = 'docs/assets/images/yeslost.png';
         this.win = new Image();
-        this.win.src = 'docs/assets/images/yeswin.png'
+        this.win.src = 'docs/assets/images/yeswin.png';
+        this.song = new Audio('docs/assets/sounds/backgroundmusic.wav')
+        this.song.loop = false;
+       
     }
     
     clearCanvas() {
@@ -38,14 +41,19 @@ class Game {
     this.drawScore()
     }
 
+
+
+
     start(){
         this.intervalId = setInterval(this.updateCanvas, 1000 / 60)
+        this.song.play();
     }
 
     checkWin(){
       if(this.score >= 7){
         this.ctx.drawImage(this.win, 0, 0, this.width, this.height)
         this.stop()
+       
       }
     }
 
@@ -60,13 +68,11 @@ class Game {
         this.obstacles.push(new Obstacles(this.newEnemy.x, this.newEnemy.y, 30, 30, 'red', ctx))
       }
 
-
-    
     }
 
     updateLife() {
       for (let i = 0; i < this.life.length; i++) {
-        this.life[i].x -= 1;
+        this.life[i].x -= 2;
         this.life[i].drawCanvas();
       }
 
@@ -83,10 +89,13 @@ class Game {
       });
       if (crash) {
             this.ctx.drawImage(this.gameOver, 0, 0, this.width, this.height)
+            document.getElementById("restart").style.display = "block";
             this.stop();
+          
           }
     }
-  checkLife() {
+  
+    checkLife() {
       const crash = this.life.some((life, index) => {
         if(this.player.crashWith(life)){
           this.life.splice(index, 1)
@@ -98,17 +107,17 @@ class Game {
           }
     }
 
-  
-
 
   stop() {
       clearInterval(this.intervalId);
+      this.song.pause();
+      this.song.currentTime = 0;
     }
 
   
 
     drawScore(){
-     this.ctx.font = '100px';
+     this.ctx.font = '';
      this.ctx.fillStyle = 'black';
      this.ctx.fillText("✨".repeat(this.score), 350, 50)
      

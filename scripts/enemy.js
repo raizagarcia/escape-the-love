@@ -9,10 +9,6 @@ class Enemy {
         this.ctx = ctx;
 }
 
-    /*moveUp() {
-        this.y -= 1;
-    }*/
-
     
     drawCanvas() {
         this.ctx.fillStyle = this.color
