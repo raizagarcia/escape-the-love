@@ -2,15 +2,13 @@
 
 
 * {
-	font-family: 'Paytone One', sans-serif;;
-	text-align: center;
+	font-family: 'Paytone One', sans-serif;
   }
 
 
 #canvas {
     display: flex;
 	flex-direction: column;
-	flex-wrap: nowrap;
 	justify-content: center;
 	align-items: center;
 	margin-top: 30px;
@@ -18,23 +16,25 @@
 	}
 
 #startButton {
-	width: 10vw;
-	height: 5vw;
+	width: 17vw;
+	height: 4vw;
 	text-decoration: none;
-	background-image: url(/docs/assets/images/shockedcat.png);
+	align-items: center;
+	background-image: url('/docs/assets/images/backcatpink.png');
 	background-position: center;
 	background-size: 110px;
-	border: 2px solid black;
-  	border-radius: 5px;
+	border: 2px solid white;
+  	border-radius: 7px;
 	font-size: 25px;
 	letter-spacing: 6px;
 	text-shadow: 2px 2px white;
-	margin-top: 40px;
 	cursor: pointer;
+	margin: 550px 650px;
+
 }
 
 #telainicial {
-	background-image: url('/docs/assets/images/telainicialfinal.png');
+	background-image: url('/docs/assets/images/telabrancainicio.png');
 	position: fixed;
 	background-size: cover;
 	top: 0;
@@ -47,5 +47,6 @@
 } 
 
 body {
-	background-image: url('/docs/assets/images/backcatpink.png');
+	background-image: url('/docs/assets/images/lightback.jpg');
+	background-size: cover;
 }

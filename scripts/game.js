@@ -51,11 +51,11 @@ class Game {
 
     updateObstacles() {
         for (let i = 0; i < this.obstacles.length; i++) {
-        this.obstacles[i].x -= 1;
+        this.obstacles[i].x -= 4;
         this.obstacles[i].drawCanvas();
       }
 
-      if(this.frames % 120 === 0){
+      if(this.frames % 60 === 0){
         this.obstacles.push(new Obstacles(this.enemy.x, this.enemy.y, 30, 30, 'red', ctx))
         this.obstacles.push(new Obstacles(this.newEnemy.x, this.newEnemy.y, 30, 30, 'red', ctx))
       }

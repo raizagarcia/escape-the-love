@@ -5,14 +5,10 @@ class Obstacles{
     this.h = h;
     this.w = w;
     this.color = color;
-    this.speedX = 1;
     this.ctx = ctx;
     this.img = new Image();
     }
   
-    newPos() {
-      this.x += this.speedX;
-  }
 
     top() {
         return this.y;
