@@ -119,7 +119,7 @@ class Game {
     drawScore(){
      this.ctx.font = '';
      this.ctx.fillStyle = 'black';
-     this.ctx.fillText("✨".repeat(this.score), 350, 50)
+     this.ctx.fillText('✨'.repeat(this.score), 350, 50)
      
     }
 
